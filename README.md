@@ -161,6 +161,31 @@ delete_campaign = client.delete_campaign(id="ID")
 update_campaign = client.update_campaign(id="ID", name="CAMPAIGN NAME", description="SOME DESCRIPTION")
 ```
 
+### Incident Section
+- see the documentation https://docs.microsoft.com/es-es/dynamics365/customer-engagement/web-api/incident?view=dynamics-ce-odata-9
+
+#### Get Incidents
+can receive orderby, filter, select, top, expand
+```
+list_incidents = client.get_incidents()
+```
+
+#### Create Incident
+```
+create_incident = client.create_incident(name="INCIDENT NAME", description="SOME DESCRIPTION")
+```
+
+#### Delete Incident
+```
+delete_incident = client.delete_incident(id="ID")
+```
+
+#### Update Incident
+```
+update_incident = client.update_incident(id="ID", name="INCIDENT NAME", description="SOME DESCRIPTION")
+```
+
+
 ## Requirements
 - requests
 

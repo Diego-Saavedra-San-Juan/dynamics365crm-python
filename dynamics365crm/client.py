@@ -304,3 +304,27 @@ class Client:
         if id != "":
             return self._delete('campaigns({0})'.format(id))
         raise Exception("To delete a campaign is necessary the ID")
+
+    # case/incident section, see the documentation https://docs.microsoft.com/sv-se/dynamics365/customer-engagement/web-api/incident?view=dynamics-ce-odata-9
+    def get_incidents(self, **kwargs):
+        return self._get('incidents', **kwargs)
+
+    def create_incident(self, **kwargs):
+        if kwargs is not None:
+            params = {}
+            params.update(kwargs)
+            return self._post('incidents', json=params)
+
+    def update_incident(self, id, **kwargs):
+        if id != "":
+            url = 'incidents({0})'.format(id)
+            params = {}
+            if kwargs is not None:
+                params.update(kwargs)
+            return self._patch(url, json=params)
+        raise Exception("To update an incident is necessary the ID")
+
+    def delete_incident(self, id):
+        if id != "":
+            return self._delete('incidentss({0})'.format(id))
+        raise Exception("To delete an incident is necessary the ID")
